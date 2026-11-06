@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applications | NexStep Career Platform</title>
+    <!-- Google Fonts: DM Serif Display & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=15">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <div class="brand-logo">
+                    <i class="fa-solid fa-compass"></i>
+                </div>
+                <h2><span style="color: var(--palette-coral, #FF6648); margin-right: 3px;">✦</span>NexStep</h2>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span>Overview</span>
+                </a>
+                <a href="upload.html" class="nav-item">
+                    <i class="fa-solid fa-file-arrow-up"></i>
+                    <span>My Resume</span>
+                </a>
+                <a href="jobs.html" class="nav-item">
+                    <i class="fa-solid fa-briefcase"></i>
+                    <span>Recommendations</span>
+                </a>
+                <a href="saved.html" class="nav-item">
+                    <i class="fa-solid fa-bookmark"></i>
+                    <span>Saved Jobs</span>
+                </a>
+                <a href="applications.html" class="nav-item active">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    <span>Applications</span>
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-pill">
+                    <div class="avatar" id="sidebarAvatar">C</div>
+                    <div class="user-info">
+                        <span class="user-name" id="sidebarUserName">Candidate</span>
+                        <span class="user-role">Candidate</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Header -->
+            <header class="top-header">
+                <div class="header-title">
+                    <h1>Application Activity</h1>
+                    <p>Track external employer job postings you have opened through NexStep.</p>
+                </div>
+                <div class="header-actions">
+                    <a href="jobs.html" class="btn btn-outline">
+                        <i class="fa-solid fa-search"></i> Explore More Jobs
+                    </a>
+                </div>
+            </header>
+
+            <!-- Main Content Container -->
+            <div class="dashboard-content">
+                <!-- Info Alert Banner -->
+                <div class="alert-banner" style="background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; border-radius: 8px; padding: 16px; margin-bottom: 24px; display: flex; align-items: flex-start; gap: 12px;">
+                    <i class="fa-solid fa-circle-info" style="font-size: 20px; margin-top: 2px;"></i>
+                    <div>
+                        <strong>External Application Tracking</strong>
+                        <p style="margin-top: 4px; font-size: 14px; color: #1e3a8a;">
+                            When you click <em>View Job</em>, NexStep directs you to the employer's official job portal. Your activity is logged as <strong>External Application</strong>.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Applications Table / Cards Container -->
+                <div id="applicationsContainer">
+                    <!-- Rendered dynamically by applications.js -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Central Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/state.js"></script>
+    <script src="js/applications.js"></script>
+</body>
+</html>

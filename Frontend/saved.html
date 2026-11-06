@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saved Jobs | NexStep Career Platform</title>
+    <!-- Google Fonts: DM Serif Display & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=15">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <div class="brand-logo">
+                    <i class="fa-solid fa-compass"></i>
+                </div>
+                <h2><span style="color: var(--palette-coral, #FF6648); margin-right: 3px;">✦</span>NexStep</h2>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span>Overview</span>
+                </a>
+                <a href="upload.html" class="nav-item">
+                    <i class="fa-solid fa-file-arrow-up"></i>
+                    <span>My Resume</span>
+                </a>
+                <a href="jobs.html" class="nav-item">
+                    <i class="fa-solid fa-briefcase"></i>
+                    <span>Recommendations</span>
+                </a>
+                <a href="saved.html" class="nav-item active">
+                    <i class="fa-solid fa-bookmark"></i>
+                    <span>Saved Jobs</span>
+                </a>
+                <a href="applications.html" class="nav-item">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    <span>Applications</span>
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-pill">
+                    <div class="avatar" id="sidebarAvatar">C</div>
+                    <div class="user-info">
+                        <span class="user-name" id="sidebarUserName">Candidate</span>
+                        <span class="user-role">Candidate</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Header -->
+            <header class="top-header">
+                <div class="header-title">
+                    <h1>Saved Jobs</h1>
+                    <p>Manage job opportunities you have bookmarked for quick access.</p>
+                </div>
+                <div class="header-actions">
+                    <a href="jobs.html" class="btn btn-outline">
+                        <i class="fa-solid fa-search"></i> Find More Jobs
+                    </a>
+                </div>
+            </header>
+
+            <!-- Main Content Container -->
+            <div class="dashboard-content">
+                <!-- Stat Summary Banner -->
+                <div class="dashboard-banner">
+                    <div class="banner-info">
+                        <span class="badge badge-info"><i class="fa-solid fa-bookmark"></i> Bookmarked Opportunities</span>
+                        <h2 id="savedJobsHeaderTitle">0 Jobs Saved</h2>
+                        <p>Keep track of roles you want to view, apply to, or compare against your resume profile.</p>
+                    </div>
+                </div>
+
+                <!-- Saved Jobs List / Grid -->
+                <div id="savedJobsContainer" class="jobs-grid" style="margin-top: 24px;">
+                    <!-- Rendered dynamically by saved.js -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Central Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/state.js"></script>
+    <script src="js/saved.js"></script>
+</body>
+</html>

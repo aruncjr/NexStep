@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In — NexStep Career Platform</title>
+  <meta name="description" content="Sign in to your NexStep account to access personalized resume matching and candidate insights.">
+  
+  <!-- Google Fonts: DM Serif Display & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css?v=15">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body class="auth-page-body">
+
+  <!-- Background Grain Overlay -->
+  <div class="bg-grain-overlay" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo" aria-label="NexStep Home">
+        <div class="logo-mark">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+            <polyline points="16 7 22 7 22 13"></polyline>
+          </svg>
+        </div>
+        <span class="logo-text"><span style="color: var(--palette-coral, #FF6648); margin-right: 3px;">✦</span>NexStep</span>
+      </a>
+
+      <div class="nav-actions">
+        <span style="font-size: 0.9rem; color: var(--color-text-muted);">Don't have an account?</span>
+        <a href="register.html" class="btn btn-outline">Create Account</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Auth Main Wrapper -->
+  <div class="auth-wrapper">
+    <div class="auth-card-container">
+      
+      <!-- Left Sidebar (Seashell/White Surface) with Floating Stat Chips -->
+      <div class="auth-sidebar">
+        <div>
+          <div class="eyebrow-badge">
+            <span class="eyebrow-dot"></span>
+            <span class="eyebrow-text">Candidate Portal</span>
+          </div>
+          <h2 class="auth-sidebar-title">Welcome back to NexStep.</h2>
+          <p class="auth-sidebar-desc">
+            Sign in to track your resume score, view updated opportunity matches, and manage your technical profile.
+          </p>
+
+          <!-- Floating Stat Chips Filling Left Panel Space -->
+          <div class="auth-stats-stack">
+            <div class="auth-stat-chip">
+              <span class="auth-stat-icon">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </span>
+              <span>12,500+ Roles Matched</span>
+            </div>
+            
+            <div class="auth-stat-chip">
+              <span class="auth-stat-icon">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+              </span>
+              <span>98.4% Parsing Accuracy</span>
+            </div>
+
+            <div class="auth-stat-chip">
+              <span class="auth-stat-icon">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                </svg>
+              </span>
+              <span>Instant Skill Alignment</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-profile-card">
+          <div class="profile-header-lbl">LIVE MATCH ENGINE</div>
+          <div style="font-size: 0.95rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 0.5rem;">
+            Over 2,400+ new roles analyzed today
+          </div>
+          <div style="font-size: 0.8rem; color: var(--color-text-muted);">
+            Matching candidate skill vectors with verified employer demand.
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Form Panel -->
+      <div class="auth-form-side">
+        <div class="auth-form-header">
+          <h1 class="auth-form-title">Sign In</h1>
+          <p class="auth-form-subtext">Enter your credentials to continue your journey.</p>
+        </div>
+
+        <form id="loginForm" novalidate>
+          <div class="form-group">
+            <label for="loginEmail" class="form-label">Email Address</label>
+            <div class="input-wrap">
+              <input type="email" id="loginEmail" class="form-input" placeholder="alex.dev@example.com" required autocomplete="email">
+            </div>
+            <span id="loginEmailError" class="inline-error" role="alert"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="loginPassword" class="form-label">Password</label>
+            <div class="input-wrap">
+              <input type="password" id="loginPassword" class="form-input" placeholder="••••••••••••" required autocomplete="current-password">
+              <button type="button" class="toggle-pwd" id="togglePasswordBtn" aria-label="Toggle password visibility">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+              </button>
+            </div>
+            <span id="loginPasswordError" class="inline-error" role="alert"></span>
+          </div>
+
+          <div class="form-row-between">
+            <label class="checkbox-label">
+              <input type="checkbox" id="rememberMe" class="checkbox-input">
+              <span>Remember me</span>
+            </label>
+            <a href="#" class="forgot-link">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="btn btn-primary auth-btn-block">
+            Sign In to Dashboard
+          </button>
+        </form>
+
+        <p class="auth-footer-text">
+          New to NexStep? <a href="register.html">Create an account</a>
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/auth.js?v=9"></script>
+</body>
+</html>

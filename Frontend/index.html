@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NexStep — AI-Powered Resume Matching Platform</title>
+  <meta name="description" content="Upload your resume, understand your technical strengths, and discover opportunities matched directly to your skill profile.">
+  
+  <!-- Google Fonts: DM Serif Display & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css?v=15">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+
+  <!-- Background Grain Texture Overlay -->
+  <div class="bg-grain-overlay" aria-hidden="true"></div>
+
+  <!-- Sticky Header Navigation -->
+  <header class="header" id="header">
+    <div class="container nav-container">
+      <a href="#" class="logo" aria-label="NexStep Home">
+        <div class="logo-mark">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+            <polyline points="16 7 22 7 22 13"></polyline>
+          </svg>
+        </div>
+        <span class="logo-text"><span style="color: var(--palette-coral, #FF6648); margin-right: 3px;">✦</span>NexStep</span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="#simulator" class="nav-link">Live Demo</a>
+        <a href="#how-it-works" class="nav-link">How It Works</a>
+        <a href="#features" class="nav-link">Features</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="login.html" class="nav-login">Sign In</a>
+        <a href="register.html" class="btn btn-primary">Get Started</a>
+        
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" y1="7" x2="20" y2="7"></line>
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <line x1="4" y1="17" x2="20" y2="17"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section with Watermark & Soft Ambient Light Shapes -->
+    <section class="hero" id="home">
+      <!-- Off-Canvas Background Depth Watermark -->
+      <div class="hero-bg-watermark" aria-hidden="true">NEXSTEP</div>
+
+      <!-- Soft Sky and Pink Quartz Light Shapes Behind Mockup -->
+      <div class="hero-ambient-orb-sky" aria-hidden="true"></div>
+      <div class="hero-ambient-orb-pink" aria-hidden="true"></div>
+
+      <div class="container hero-grid">
+        <!-- Hero Text Column -->
+        <div class="hero-text-block">
+          <div class="eyebrow-badge">
+            <span class="eyebrow-dot"></span>
+            <span class="eyebrow-text">AI-Powered Career Matching</span>
+          </div>
+          
+          <h1 class="hero-title">
+            Your next job starts with your resume.
+          </h1>
+          
+          <p class="hero-description">
+            Upload your resume, understand your technical strengths, and discover high-intent job opportunities matched directly to your experience.
+          </p>
+          
+          <div class="hero-actions">
+            <a href="register.html" class="btn btn-primary btn-lg">
+              Get Started Free
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="#simulator" class="btn btn-outline btn-lg">Try Live Demo</a>
+          </div>
+
+          <div class="hero-metrics">
+            <div class="metric-item">
+              <span class="metric-val">98.4%</span>
+              <span class="metric-lbl">Parsing Accuracy</span>
+            </div>
+            <div class="metric-divider"></div>
+            <div class="metric-item">
+              <span class="metric-val">12,500+</span>
+              <span class="metric-lbl">Verified Roles</span>
+            </div>
+            <div class="metric-divider"></div>
+            <div class="metric-item">
+              <span class="metric-val">&lt; 3 Sec</span>
+              <span class="metric-lbl">Instant Match</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Surface Mockup Window (Aligned Persona: Alex Smith / Software Developer) -->
+        <div class="hero-visual">
+          <div class="product-window">
+            <div class="window-header">
+              <div class="window-dots">
+                <span class="dot dot-close"></span>
+                <span class="dot dot-min"></span>
+                <span class="dot dot-max"></span>
+              </div>
+              <div class="window-url">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+                <span>nexstep.app/dashboard</span>
+              </div>
+            </div>
+
+            <div class="window-body">
+              <!-- Parsed Candidate Profile Card (Alex Smith) -->
+              <div class="product-profile-card">
+                <div class="profile-header-lbl">PARSED CANDIDATE PROFILE</div>
+                <div class="profile-role-title">Software Developer</div>
+                
+                <div class="profile-skills-row">
+                  <span class="skill-chip">Python</span>
+                  <span class="skill-chip">Flask</span>
+                  <span class="skill-chip">SQL</span>
+                  <span class="skill-chip">JavaScript</span>
+                  <span class="skill-chip">Git</span>
+                  <span class="skill-chip">REST APIs</span>
+                </div>
+              </div>
+
+              <!-- Recommendations Section -->
+              <div class="recommendations-section">
+                <div class="rec-section-header">TOP RECOMMENDATIONS FOR YOU</div>
+                
+                <div class="rec-jobs-list">
+                  <div class="job-item-row job-item-highlight">
+                    <div class="job-item-info">
+                      <h4 class="job-item-title">Backend Developer</h4>
+                      <p class="job-item-meta">TechCorp Solutions · Chennai · Full-time</p>
+                    </div>
+                    <div class="status-success">94% Match</div>
+                  </div>
+
+                  <div class="job-item-row">
+                    <div class="job-item-info">
+                      <h4 class="job-item-title">Full Stack Developer</h4>
+                      <p class="job-item-meta">Innovate Labs · Bangalore · Full-time</p>
+                    </div>
+                    <div class="status-success">89% Match</div>
+                  </div>
+
+                  <div class="job-item-row">
+                    <div class="job-item-info">
+                      <h4 class="job-item-title">Data Analyst</h4>
+                      <p class="job-item-meta">DataWorks · Chennai · Full-time</p>
+                    </div>
+                    <div class="status-warning">82% Match</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Resume Upload Dropzone Simulator -->
+    <section class="simulator-section" id="simulator">
+      <div class="container">
+        <div class="simulator-box">
+          <div class="section-intro text-center">
+            <span class="section-kicker">Interactive Demo</span>
+            <h2 class="section-heading">Test NexStep Resume Matcher</h2>
+            <p class="section-subheading">
+              Select a sample profile below or drag your resume file to see instant parsing and matching in action.
+            </p>
+          </div>
+
+          <div class="sim-sample-btns">
+            <span class="sample-chip" onclick="simulateResume('software')">💻 Software Developer</span>
+            <span class="sample-chip" onclick="simulateResume('data')">📊 Data Scientist</span>
+            <span class="sample-chip" onclick="simulateResume('frontend')">🎨 Frontend Engineer</span>
+          </div>
+
+          <div class="dropzone-area" id="dropzone" onclick="simulateResume('software')">
+            <div class="dropzone-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="17 8 12 3 7 8"></polyline>
+                <line x1="12" y1="3" x2="12" y2="15"></line>
+              </svg>
+            </div>
+            <h3 class="dropzone-title">Click or Drop Resume PDF Here</h3>
+            <p class="dropzone-subtext">Supports PDF, DOCX files up to 10MB</p>
+          </div>
+
+          <div class="sim-result-box" id="simResultBox">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+              <span id="simStatusText" style="font-weight: 800; color: var(--color-primary);">Analyzing resume skills...</span>
+              <span id="simPercentText" style="font-weight: 900; color: var(--color-primary-dark);">0%</span>
+            </div>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar-fill" id="simProgressBar"></div>
+            </div>
+            <div id="simDetailsOutput"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+      <div class="container">
+        <div class="section-intro text-center">
+          <span class="section-kicker">Transparent Process</span>
+          <h2 class="section-heading">How NexStep Matches Your Career</h2>
+          <p class="section-subheading">
+            Three intuitive steps between your resume and high-confidence opportunities.
+          </p>
+        </div>
+
+        <div class="workflow-grid">
+          <div class="step-card-box">
+            <div class="step-num-badge">01</div>
+            <h3 class="step-card-title">Upload Your Resume</h3>
+            <p class="step-card-desc">
+              Upload your PDF resume. NexStep extracts technical skill clusters, project experiences, and domain knowledge.
+            </p>
+          </div>
+
+          <div class="step-card-box">
+            <div class="step-num-badge">02</div>
+            <h3 class="step-card-title">Profile Deep-Dive</h3>
+            <p class="step-card-desc">
+              Review your extracted skill breakdown and strengths evaluated across modern industry benchmarks.
+            </p>
+          </div>
+
+          <div class="step-card-box">
+            <div class="step-num-badge">03</div>
+            <h3 class="step-card-title">Discover Top Matches</h3>
+            <p class="step-card-desc">
+              Explore job recommendations ranked with transparent match scoring and key skill overlaps.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bento Features Section -->
+    <section class="features" id="features">
+      <div class="container">
+        <div class="section-intro">
+          <span class="section-kicker">Capabilities</span>
+          <h2 class="section-heading">Engineered for Candidate Clarity</h2>
+          <p class="section-subheading">
+            Data-backed clarity so job seekers can target roles with genuine fit.
+          </p>
+        </div>
+
+        <div class="bento-grid">
+          <div class="bento-card bento-hero-card">
+            <div class="feature-badge-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+            </div>
+            <h3 class="bento-title">Automated Skill Extraction</h3>
+            <p class="bento-desc">
+              No manual form filling required. Extract languages, frameworks, cloud tools, and key experience indicators automatically.
+            </p>
+            <div class="analysis-snippet">
+              <div class="snippet-header">
+                <span class="snippet-dot"></span>
+                <span class="snippet-title">Live Resume Output Snippet</span>
+              </div>
+              <div class="snippet-row">
+                <span class="snippet-key">Extracted Skills:</span>
+                <span class="snippet-val">Python, Flask, PostgreSQL, Docker, Git, REST APIs</span>
+              </div>
+              <div class="snippet-row">
+                <span class="snippet-key">Primary Fit:</span>
+                <span class="snippet-val">Software Developer / Backend Engineer</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bento-card">
+            <div class="feature-badge-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+              </svg>
+            </div>
+            <h3 class="bento-title">Precision Match Scoring</h3>
+            <p class="bento-desc">
+              Transparent percentage scores reveal how well your background satisfies key position requirements.
+            </p>
+          </div>
+
+          <div class="bento-card">
+            <div class="feature-badge-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+              </svg>
+            </div>
+            <h3 class="bento-title">Skill Gap Insights</h3>
+            <p class="bento-desc">
+              Uncover missing skills that could unlock your next salary tier or seniority level.
+            </p>
+          </div>
+
+          <div class="bento-card bento-wide-card">
+            <div class="feature-badge-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </div>
+            <h3 class="bento-title">Personalized Career Trajectory</h3>
+            <p class="bento-desc">
+              Understand market demand trends and receive proactive notifications when positions matching your skillset are posted.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Banner -->
+    <section class="cta-section" id="get-started">
+      <div class="container">
+        <div class="cta-banner">
+          <h2 class="cta-title">Ready to discover where your resume takes you?</h2>
+          <p class="cta-desc">
+            Join thousands of professionals taking control of their career path with transparent resume recommendations.
+          </p>
+          <a href="register.html" class="btn btn-primary btn-lg">
+            Create Account & Get Matched
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="#" class="logo">
+            <div class="logo-mark">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+                <polyline points="16 7 22 7 22 13"></polyline>
+              </svg>
+            </div>
+            <span class="logo-text">NexStep</span>
+          </a>
+          <p class="footer-tagline">
+            Your technical skills. Your matched opportunities. Your next step.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#simulator">Live Demo</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#features">Features</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Account</h4>
+          <ul class="footer-links">
+            <li><a href="register.html">Sign Up</a></li>
+            <li><a href="login.html">Sign In</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Legal</h4>
+          <ul class="footer-links">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 NexStep Platform. All rights reserved.</p>
+        <p>Resume-Based Job Matching</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Frontend JavaScript -->
+  <script src="js/script.js?v=8"></script>
+</body>
+</html>

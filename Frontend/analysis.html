@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Analysis — NexStep Career Platform</title>
+  <meta name="description" content="View detailed AI analysis of your resume including score, skills identified, work experience, education, and areas to improve.">
+  
+  <!-- Google Fonts: DM Serif Display & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css?v=15">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+
+  <!-- Background Grain Overlay -->
+  <div class="bg-grain-overlay" aria-hidden="true"></div>
+
+  <!-- Main Application Shell -->
+  <div class="dash-shell">
+
+    <!-- Faint Upward Trendline SVG Watermark Background -->
+    <svg class="dash-bg-trendline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+      <polyline points="16 7 22 7 22 13"></polyline>
+    </svg>
+
+    <!-- Left Sidebar (Clean White Surface) -->
+    <aside class="dash-sidebar" id="dashSidebar">
+      <div>
+        <!-- Brand Logo -->
+        <div class="dash-sidebar-brand">
+          <a href="index.html" class="logo" aria-label="NexStep Home">
+            <div class="logo-mark">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+                <polyline points="16 7 22 7 22 13"></polyline>
+              </svg>
+            </div>
+            <span class="logo-text"><span style="color: var(--palette-coral, #FF6648); margin-right: 3px;">✦</span>NexStep</span>
+          </a>
+        </div>
+
+        <!-- Main Navigation Links -->
+        <nav aria-label="Dashboard Navigation">
+          <ul class="dash-nav-list">
+            <li>
+              <a href="dashboard.html" class="dash-nav-item">
+                <span class="dash-nav-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7" rx="1"></rect>
+                    <rect x="14" y="3" width="7" height="7" rx="1"></rect>
+                    <rect x="14" y="14" width="7" height="7" rx="1"></rect>
+                    <rect x="3" y="14" width="7" height="7" rx="1"></rect>
+                  </svg>
+                </span>
+                <span>Overview</span>
+              </a>
+            </li>
+            <li>
+              <a href="upload.html" class="dash-nav-item active">
+                <span class="dash-nav-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                  </svg>
+                </span>
+                <span>My Resume</span>
+              </a>
+            </li>
+            <li>
+              <a href="jobs.html" class="dash-nav-item">
+                <span class="dash-nav-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+                </span>
+                <span>Recommendations</span>
+              </a>
+            </li>
+            <li>
+              <a href="saved.html" class="dash-nav-item">
+                <span class="dash-nav-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                </span>
+                <span>Saved Jobs</span>
+              </a>
+            </li>
+            <li>
+              <a href="applications.html" class="dash-nav-item">
+                <span class="dash-nav-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                  </svg>
+                </span>
+                <span>Applications</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Bottom Settings & Profile Links -->
+      <div class="dash-sidebar-footer">
+        <!-- User Profile Card in Sidebar -->
+        <div class="dash-user-card">
+          <div class="user-avatar-circle" id="sidebarAvatar">C</div>
+          <div class="user-info-meta">
+            <span class="user-name" id="sidebarUserName">Candidate</span>
+            <span class="user-role-sub">Candidate</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Right Area -->
+    <div class="dash-main-wrap">
+      
+      <!-- Top Header Navigation Bar -->
+      <header class="dash-header-bar">
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <button class="mobile-dash-toggle" id="mobileDashToggle" aria-label="Toggle navigation sidebar">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+          <div>
+            <h1 class="dash-greeting-title">Resume Analysis</h1>
+            <p class="dash-greeting-sub">Here’s what we extracted from your resume.</p>
+          </div>
+        </div>
+
+        <div class="dash-header-actions">
+          <span class="analysis-status-badge">
+            <span class="analysis-status-dot"></span>
+            Analysis complete
+          </span>
+
+          <div class="user-profile-dropdown-btn">
+            <div class="user-avatar-circle" id="headerAvatar" style="width: 32px; height: 32px; font-size: 0.8rem;">C</div>
+            <span style="font-size: 0.875rem; font-weight: 800; color: var(--color-primary-dark);" id="headerUserName">Candidate</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Body Content -->
+      <main class="dash-body-content">
+        <div class="dash-grid-layout">
+          
+          <!-- Left Main Column -->
+          <div class="dash-left-col">
+
+            <!-- 1. Resume Summary Card -->
+            <section class="dash-card">
+              <div class="current-resume-row">
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                  <div class="file-type-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                      <polyline points="14 2 14 8 20 8"></polyline>
+                    </svg>
+                  </div>
+                  <div>
+                    <div style="font-size: 1.05rem; font-weight: 800; color: var(--color-primary-dark);" id="analysisFilename">Uploaded_Resume.pdf</div>
+                    <div style="font-size: 0.8125rem; color: var(--color-text-muted);" id="analysisMeta">PDF · Analyzed just now</div>
+                  </div>
+                </div>
+
+                <div>
+                  <a href="upload.html" class="btn btn-outline btn-sm" id="replaceResumeBtn">Upload New Resume</a>
+                </div>
+              </div>
+            </section>
+
+            <!-- 2. Skills Found Section -->
+            <section class="dash-card">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem;">
+                <h3 style="font-size: 1.2rem; font-weight: 800; color: var(--color-primary-dark);">Extracted Technical Skills</h3>
+                <span id="skillsCountBadge" style="font-size: 0.8125rem; font-weight: 700; color: #1D4ED8; background-color: #EFF6FF; border: 1px solid #BFDBFE; padding: 0.25rem 0.75rem; border-radius: var(--radius-pill);">0 skills identified</span>
+              </div>
+
+              <div class="profile-skills-row" id="analysisSkillsContainer" style="gap: 0.6rem; display: flex; flex-wrap: wrap;">
+                <!-- Rendered dynamically by analysis.js -->
+              </div>
+            </section>
+
+            <!-- 3. Work Experience Section -->
+            <section class="dash-card">
+              <h3 style="font-size: 1.2rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 1.25rem;">Experience Extracted</h3>
+
+              <div class="timeline-list" id="analysisExperienceContainer">
+                <!-- Rendered dynamically by analysis.js -->
+              </div>
+            </section>
+
+            <!-- 4. Education Section -->
+            <section class="dash-card">
+              <h3 style="font-size: 1.2rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 1.25rem;">Education Extracted</h3>
+
+              <div class="timeline-list" id="analysisEducationContainer">
+                <!-- Rendered dynamically by analysis.js -->
+              </div>
+            </section>
+
+          </div>
+
+          <!-- Right Sidebar Column -->
+          <div class="dash-right-col">
+
+            <!-- 5. Overall Resume Score -->
+            <section class="dash-card">
+              <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 1.25rem;">Reference Match Probability</h3>
+
+              <div class="score-gauge-box">
+                <div class="score-circle-ring">
+                  <svg viewBox="0 0 100 100">
+                    <circle class="score-circle-bg" cx="50" cy="50" r="42"></circle>
+                    <circle class="score-circle-fill" cx="50" cy="50" r="42"></circle>
+                  </svg>
+                  <div class="score-number-label">
+                    <div class="score-val">0</div>
+                    <div class="score-denom">%</div>
+                  </div>
+                </div>
+
+                <div>
+                  <p style="font-size: 0.875rem; color: var(--color-text-body); line-height: 1.5; margin: 0;">
+                    Model-calculated probability score for general software development alignment.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <!-- 6. Action Area -->
+            <section class="dash-card" style="display: flex; flex-direction: column; gap: 0.85rem;">
+              <a href="jobs.html" class="btn btn-primary btn-lg" style="width: 100%; text-align: center; justify-content: center;">
+                <i class="fa-solid fa-briefcase" style="margin-right: 6px;"></i> View Job Recommendations
+              </a>
+              <a href="upload.html" class="btn btn-outline" style="width: 100%; text-align: center; justify-content: center;">
+                Upload Different Resume
+              </a>
+            </section>
+
+          </div>
+
+        </div>
+      </main>
+
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="js/config.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/analysis.js?v=6"></script>
+</body>
+</html>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Recommendations — NexStep Career Platform</title>
+  <meta name="description" content="View personalized job recommendations ranked by ML match model fit against your uploaded resume.">
+  
+  <!-- Google Fonts: DM Serif Display & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css?v=15">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+
+  <!-- Background Grain Overlay -->
+  <div class="bg-grain-overlay" aria-hidden="true"></div>
+
+  <!-- Main Application Shell -->
+  <div class="dash-shell">
+
+    <!-- Faint Upward Trendline SVG Watermark Background -->
+    <svg class="dash-bg-trendline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+      <polyline points="16 7 22 7 22 13"></polyline>
+    </svg>
+
+    <!-- Left Sidebar (Clean White Surface) -->
+    <aside class="dash-sidebar" id="dashSidebar">
+      <div>
+        <!-- Brand Logo -->
+        <div class="dash-sidebar-brand">
+          <a href="index.html" class="logo" aria-label="NexStep Home">
+            <div class="logo-mark">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+                <polyline points="16 7 22 7 22 13"></polyline>
+              </svg>
+            </div>
+            <span class="logo-text"><span style="color: var(--palette-coral, #FF6648); margin-right: 3px;">✦</span>NexStep</span>
+          </a>
+        </div>
+
+        <!-- Main Navigation Links -->
+        <nav aria-label="Dashboard Navigation">
+          <ul class="dash-nav-list">
+            <li>
+              <a href="dashboard.html" class="dash-nav-item">
+                <span class="dash-nav-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7" rx="1"></rect>
+                    <rect x="14" y="3" width="7" height="7" rx="1"></rect>
+                    <rect x="14" y="14" width="7" height="7" rx="1"></rect>
+                    <rect x="3" y="14" width="7" height="7" rx="1"></rect>
+                  </svg>
+                </span>
+                <span>Overview</span>
+              </a>
+            </li>
+            <li>
+              <a href="upload.html" class="dash-nav-item">
+                <span class="dash-nav-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                  </svg>
+                </span>
+                <span>My Resume</span>
+              </a>
+            </li>
+            <li>
+              <a href="jobs.html" class="dash-nav-item active">
+                <span class="dash-nav-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+                </span>
+                <span>Recommendations</span>
+              </a>
+            </li>
+            <li>
+              <a href="saved.html" class="dash-nav-item">
+                <span class="dash-nav-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                </span>
+                <span>Saved Jobs</span>
+              </a>
+            </li>
+            <li>
+              <a href="applications.html" class="dash-nav-item">
+                <span class="dash-nav-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                  </svg>
+                </span>
+                <span>Applications</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Bottom Settings & Profile Links -->
+      <div class="dash-sidebar-footer">
+        <!-- User Profile Card in Sidebar -->
+        <div class="dash-user-card">
+          <div class="user-avatar-circle" id="sidebarAvatar">C</div>
+          <div class="user-info-meta">
+            <span class="user-name" id="sidebarUserName">Candidate</span>
+            <span class="user-role-sub">Candidate</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Right Area -->
+    <div class="dash-main-wrap">
+      
+      <!-- Top Header Navigation Bar -->
+      <header class="dash-header-bar">
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <button class="mobile-dash-toggle" id="mobileDashToggle" aria-label="Toggle navigation sidebar">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+          <div>
+            <h1 class="dash-greeting-title">Job Recommendations</h1>
+            <p class="dash-greeting-sub">Top public career opportunities matched against your uploaded resume using NexStep ML model.</p>
+          </div>
+        </div>
+
+        <div class="dash-header-actions">
+          <div class="user-profile-dropdown-btn">
+            <div class="user-avatar-circle" id="headerAvatar" style="width: 32px; height: 32px; font-size: 0.8rem;">C</div>
+            <span style="font-size: 0.875rem; font-weight: 800; color: var(--color-primary-dark);" id="headerUserName">Candidate</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Body Content -->
+      <main class="dash-body-content">
+        <div class="upload-main-grid" style="max-width: 960px;">
+
+          <!-- Fallback Banner Alert -->
+          <div id="fallbackNoticeBanner" style="display: none; background: #fffbe6; border: 1px solid #ffe58f; color: #873800; padding: 12px 16px; border-radius: 8px; font-size: 0.875rem; align-items: center; gap: 10px;">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>Live public job sources are temporarily unavailable. Showing fallback demo job listings.</span>
+          </div>
+
+          <!-- Loading State with Shimmer Skeletons -->
+          <div id="jobsLoadingState">
+            <!-- Loading Status Indicator Bar -->
+            <div class="dash-card" style="padding: 1rem 1.5rem; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
+              <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <span class="skeleton-spinner"></span>
+                <div>
+                  <h3 style="font-size: 0.95rem; font-weight: 800; color: var(--color-primary-dark); margin: 0;">Evaluating live opportunities...</h3>
+                  <p style="font-size: 0.8125rem; color: var(--color-text-muted); margin: 0;">Ranking roles by resume fit probability and skill overlap</p>
+                </div>
+              </div>
+              <span class="skeleton skeleton-pill" style="width: 110px; height: 1.5rem;"></span>
+            </div>
+
+            <!-- Shimmer Skeleton Job Cards -->
+            <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+              <!-- Skeleton Card 1 -->
+              <article class="dash-card skeleton-card" style="padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem;">
+                  <div style="flex: 1;">
+                    <div class="skeleton skeleton-sub" style="width: 140px; margin-bottom: 0.4rem;"></div>
+                    <div class="skeleton skeleton-title" style="width: 280px; max-width: 80%; height: 1.35rem; margin-bottom: 0.6rem;"></div>
+                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                      <div class="skeleton skeleton-pill" style="width: 75px; height: 1.25rem;"></div>
+                      <div class="skeleton skeleton-pill" style="width: 85px; height: 1.25rem;"></div>
+                      <div class="skeleton skeleton-pill" style="width: 95px; height: 1.25rem;"></div>
+                    </div>
+                  </div>
+                  <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0.4rem;">
+                    <div class="skeleton skeleton-circle" style="width: 58px; height: 58px;"></div>
+                    <div class="skeleton skeleton-pill" style="width: 72px; height: 1.3rem;"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="skeleton skeleton-text" style="width: 100%;"></div>
+                  <div class="skeleton skeleton-text" style="width: 92%;"></div>
+                  <div class="skeleton skeleton-text" style="width: 65%;"></div>
+                </div>
+                <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+                  <div class="skeleton skeleton-pill" style="width: 65px; height: 1.4rem;"></div>
+                  <div class="skeleton skeleton-pill" style="width: 80px; height: 1.4rem;"></div>
+                  <div class="skeleton skeleton-pill" style="width: 55px; height: 1.4rem;"></div>
+                  <div class="skeleton skeleton-pill" style="width: 70px; height: 1.4rem;"></div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 0.75rem; border-top: 1px solid var(--color-border); flex-wrap: wrap; gap: 0.75rem;">
+                  <div class="skeleton skeleton-sub" style="width: 180px; margin: 0;"></div>
+                  <div style="display: flex; gap: 0.6rem;">
+                    <div class="skeleton skeleton-pill" style="width: 85px; height: 1.85rem;"></div>
+                    <div class="skeleton skeleton-pill" style="width: 100px; height: 1.85rem;"></div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Skeleton Card 2 -->
+              <article class="dash-card skeleton-card" style="padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem;">
+                  <div style="flex: 1;">
+                    <div class="skeleton skeleton-sub" style="width: 160px; margin-bottom: 0.4rem;"></div>
+                    <div class="skeleton skeleton-title" style="width: 320px; max-width: 85%; height: 1.35rem; margin-bottom: 0.6rem;"></div>
+                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                      <div class="skeleton skeleton-pill" style="width: 70px; height: 1.25rem;"></div>
+                      <div class="skeleton skeleton-pill" style="width: 90px; height: 1.25rem;"></div>
+                      <div class="skeleton skeleton-pill" style="width: 80px; height: 1.25rem;"></div>
+                    </div>
+                  </div>
+                  <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0.4rem;">
+                    <div class="skeleton skeleton-circle" style="width: 58px; height: 58px;"></div>
+                    <div class="skeleton skeleton-pill" style="width: 72px; height: 1.3rem;"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="skeleton skeleton-text" style="width: 100%;"></div>
+                  <div class="skeleton skeleton-text" style="width: 88%;"></div>
+                  <div class="skeleton skeleton-text" style="width: 70%;"></div>
+                </div>
+                <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+                  <div class="skeleton skeleton-pill" style="width: 75px; height: 1.4rem;"></div>
+                  <div class="skeleton skeleton-pill" style="width: 60px; height: 1.4rem;"></div>
+                  <div class="skeleton skeleton-pill" style="width: 85px; height: 1.4rem;"></div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 0.75rem; border-top: 1px solid var(--color-border); flex-wrap: wrap; gap: 0.75rem;">
+                  <div class="skeleton skeleton-sub" style="width: 180px; margin: 0;"></div>
+                  <div style="display: flex; gap: 0.6rem;">
+                    <div class="skeleton skeleton-pill" style="width: 85px; height: 1.85rem;"></div>
+                    <div class="skeleton skeleton-pill" style="width: 100px; height: 1.85rem;"></div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Skeleton Card 3 -->
+              <article class="dash-card skeleton-card" style="padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem;">
+                  <div style="flex: 1;">
+                    <div class="skeleton skeleton-sub" style="width: 130px; margin-bottom: 0.4rem;"></div>
+                    <div class="skeleton skeleton-title" style="width: 260px; max-width: 75%; height: 1.35rem; margin-bottom: 0.6rem;"></div>
+                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                      <div class="skeleton skeleton-pill" style="width: 80px; height: 1.25rem;"></div>
+                      <div class="skeleton skeleton-pill" style="width: 85px; height: 1.25rem;"></div>
+                    </div>
+                  </div>
+                  <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0.4rem;">
+                    <div class="skeleton skeleton-circle" style="width: 58px; height: 58px;"></div>
+                    <div class="skeleton skeleton-pill" style="width: 72px; height: 1.3rem;"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="skeleton skeleton-text" style="width: 100%;"></div>
+                  <div class="skeleton skeleton-text" style="width: 95%;"></div>
+                  <div class="skeleton skeleton-text" style="width: 55%;"></div>
+                </div>
+                <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+                  <div class="skeleton skeleton-pill" style="width: 70px; height: 1.4rem;"></div>
+                  <div class="skeleton skeleton-pill" style="width: 90px; height: 1.4rem;"></div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 0.75rem; border-top: 1px solid var(--color-border); flex-wrap: wrap; gap: 0.75rem;">
+                  <div class="skeleton skeleton-sub" style="width: 180px; margin: 0;"></div>
+                  <div style="display: flex; gap: 0.6rem;">
+                    <div class="skeleton skeleton-pill" style="width: 85px; height: 1.85rem;"></div>
+                    <div class="skeleton skeleton-pill" style="width: 100px; height: 1.85rem;"></div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- Error State Indicator -->
+          <div class="dash-card" id="jobsErrorState" style="display: none; text-align: center; padding: 3rem 2rem;">
+            <div class="upload-icon-circle" style="background-color: rgba(217, 56, 58, 0.12); color: #D9383A;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+            </div>
+            <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 0.5rem;" id="jobsErrorMessage">Resume data is unavailable. Please upload your resume again.</h3>
+            <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: 1.5rem;">We need your extracted resume text to compute accurate TF-IDF job match recommendations.</p>
+            <a href="upload.html" class="btn btn-primary btn-lg" style="display: inline-flex;">Upload Resume</a>
+          </div>
+
+          <!-- Empty State Indicator -->
+          <div class="dash-card" id="jobsEmptyState" style="display: none; text-align: center; padding: 3rem 2rem;">
+            <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 0.5rem;">No job recommendations found.</h3>
+            <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: 1.5rem;">Try uploading an updated resume or exploring other career paths.</p>
+            <a href="upload.html" class="btn btn-outline" style="display: inline-flex;">Upload New Resume</a>
+          </div>
+
+          <!-- Job Filters Card -->
+          <div class="dash-card" id="jobsFilterCard" style="display: none; padding: 1.25rem 1.5rem; margin-bottom: 0.5rem;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; align-items: end;">
+              <!-- 1. Search Filter (Title / Company) -->
+              <div>
+                <label for="jobSearchInput" style="display: block; font-size: 0.75rem; font-weight: 800; color: var(--color-primary-dark); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem;">
+                  Search Jobs
+                </label>
+                <div style="position: relative; display: flex; align-items: center;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="position: absolute; left: 12px; color: var(--color-text-muted); pointer-events: none;">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+                  <input 
+                    type="text" 
+                    id="jobSearchInput" 
+                    class="form-input"
+                    placeholder="Filter by title or company..." 
+                    style="padding: 0.65rem 0.75rem 0.65rem 2.25rem; font-size: 0.875rem;"
+                  >
+                </div>
+              </div>
+
+              <!-- 2. Location Dropdown -->
+              <div>
+                <label for="jobLocationSelect" style="display: block; font-size: 0.75rem; font-weight: 800; color: var(--color-primary-dark); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem;">
+                  Location
+                </label>
+                <select 
+                  id="jobLocationSelect" 
+                  class="form-input"
+                  style="padding: 0.65rem 0.75rem; font-size: 0.875rem; cursor: pointer;"
+                >
+                  <option value="">All Locations</option>
+                </select>
+              </div>
+
+              <!-- 3. Minimum Match Score Slider -->
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+                  <label for="jobScoreSlider" style="font-size: 0.75rem; font-weight: 800; color: var(--color-primary-dark); text-transform: uppercase; letter-spacing: 0.05em;">
+                    Min Match Score
+                  </label>
+                  <span id="jobScoreValue" style="font-size: 0.8125rem; font-weight: 800; color: var(--color-primary);">0%</span>
+                </div>
+                <input 
+                  type="range" 
+                  id="jobScoreSlider" 
+                  min="0" 
+                  max="98" 
+                  value="0" 
+                  step="1"
+                  style="width: 100%; accent-color: var(--color-primary, #2563EB); cursor: pointer; height: 6px;"
+                >
+              </div>
+            </div>
+
+            <!-- Filter Status & Reset Action -->
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.85rem; padding-top: 0.75rem; border-top: 1px solid var(--color-border-subtle, #F1F5F9); font-size: 0.8125rem; color: var(--color-text-muted); flex-wrap: wrap; gap: 0.5rem;">
+              <span id="jobsFilterCount">Showing all recommendations</span>
+              <button type="button" id="resetFiltersBtn" style="background: none; border: none; color: var(--color-primary); font-size: 0.8125rem; font-weight: 700; cursor: pointer; padding: 0; text-decoration: underline;">
+                Reset Filters
+              </button>
+            </div>
+          </div>
+
+          <!-- Filter Empty State (when filters yield no results) -->
+          <div class="dash-card" id="jobsNoFilterState" style="display: none; text-align: center; padding: 3rem 2rem;">
+            <div class="upload-icon-circle" style="background-color: var(--color-primary-light); color: var(--color-primary);">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg>
+            </div>
+            <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 0.5rem;">No matching jobs found</h3>
+            <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: 1.5rem; max-width: 480px; margin-left: auto; margin-right: auto;">
+              No recommendations match your search keyword, location, or minimum match score. Try broadening your criteria.
+            </p>
+            <button type="button" id="clearFiltersBtn" class="btn btn-outline" style="display: inline-flex;">
+              Clear All Filters
+            </button>
+          </div>
+
+          <!-- Job Cards List Container -->
+          <div id="jobsListContainer" style="display: none; flex-direction: column; gap: 1.5rem;"></div>
+
+        </div>
+      </main>
+
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="js/config.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/jobs.js?v=6"></script>
+</body>
+</html>

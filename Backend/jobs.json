@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "title": "Python Developer",
+    "company": "TechNova Solutions",
+    "location": "Chennai, Tamil Nadu",
+    "type": "Full-time",
+    "experience": "0-2 years",
+    "description": "We are looking for a Python Developer to join our core engineering team. The candidate will work on developing RESTful APIs, automation scripts, and database integrations using Python, Flask, SQL, MySQL, and PostgreSQL. Familiarity with Git version control, HTML, CSS, JavaScript, and basic machine learning concepts is a plus."
+  },
+  {
+    "id": 2,
+    "title": "Full Stack Developer",
+    "company": "DigitalWorks Tech",
+    "location": "Bengaluru, Karnataka",
+    "type": "Full-time",
+    "experience": "1-3 years",
+    "description": "Seeking an energetic Full Stack Developer skilled in modern web development. Core requirements include JavaScript, HTML5, CSS3, React, Python, Flask, and SQL/MySQL database design. Experience with REST APIs, Git workflows, and cloud deployments is highly desirable."
+  },
+  {
+    "id": 3,
+    "title": "Backend Developer",
+    "company": "Apex Software Systems",
+    "location": "Hyderabad, Telangana",
+    "type": "Full-time",
+    "experience": "1-2 years",
+    "description": "Looking for a Backend Developer responsible for building scalable server-side logic and database architecture. Must have strong expertise in Python, Flask or Django, SQL query optimization, MySQL, REST API development, Git, and data structures."
+  },
+  {
+    "id": 4,
+    "title": "Frontend Developer",
+    "company": "PixelCraft Media",
+    "location": "Chennai, Tamil Nadu",
+    "type": "Full-time",
+    "experience": "0-2 years",
+    "description": "Join our product design team as a Frontend Developer. Required technical skills include HTML5, CSS3, JavaScript (ES6+), React, responsive UI design, accessibility standards, REST API consumption, and Git. Experience with CSS frameworks and UI state management is preferred."
+  },
+  {
+    "id": 5,
+    "title": "Java Developer",
+    "company": "InnoTech Solutions",
+    "location": "Pune, Maharashtra",
+    "type": "Full-time",
+    "experience": "1-3 years",
+    "description": "We are hiring a Java Developer to build enterprise backend microservices. Key requirements: Java 11/17, Spring Boot, SQL, MySQL, Hibernate, RESTful Web Services, Maven, Git, and unit testing using JUnit. Knowledge of object-oriented design and SQL database indexing is essential."
+  },
+  {
+    "id": 6,
+    "title": "Data Analyst",
+    "company": "DataInsight Analytics",
+    "location": "Bengaluru, Karnataka",
+    "type": "Full-time",
+    "experience": "0-2 years",
+    "description": "We need a Data Analyst to transform complex datasets into actionable business intelligence. Required skills: Python, SQL, Pandas, NumPy, MySQL, Excel, data visualization libraries (Matplotlib, Seaborn), and basic statistical modeling. Strong analytical problem-solving skills required."
+  },
+  {
+    "id": 7,
+    "title": "Machine Learning Engineer",
+    "company": "Cognitive AI Labs",
+    "location": "Bengaluru, Karnataka",
+    "type": "Full-time",
+    "experience": "1-3 years",
+    "description": "Seeking a Machine Learning Engineer to design, train, and deploy predictive models. Technologies include Python, Scikit-learn, TensorFlow or PyTorch, TF-IDF, Natural Language Processing (NLP), Pandas, SQL, Flask model serving, and Git version control."
+  },
+  {
+    "id": 8,
+    "title": "Software Engineer",
+    "company": "NextGen Systems",
+    "location": "Chennai, Tamil Nadu",
+    "type": "Full-time",
+    "experience": "0-2 years",
+    "description": "Looking for a versatile Software Engineer proficient in core computer science fundamentals, algorithm design, Python, Java, SQL, database management systems (MySQL), Git, and software development lifecycles."
+  },
+  {
+    "id": 9,
+    "title": "Web Developer",
+    "company": "WebSpectrum Studio",
+    "location": "Coimbatore, Tamil Nadu",
+    "type": "Full-time",
+    "experience": "0-2 years",
+    "description": "Hiring a Web Developer to build clean, responsive client websites and web applications. Essential skills: HTML, CSS, JavaScript, Python, Flask, MySQL database management, responsive web design, cross-browser compatibility, and Git."
+  },
+  {
+    "id": 10,
+    "title": "SQL Developer",
+    "company": "Database Dynamics",
+    "location": "Hyderabad, Telangana",
+    "type": "Full-time",
+    "experience": "1-3 years",
+    "description": "We are seeking a SQL Developer to manage complex relational database systems. Must be expert in SQL query optimization, stored procedures, triggers, indexing, schema design, MySQL, PostgreSQL, data migration scripts, and database performance tuning."
+  },
+  {
+    "id": 11,
+    "title": "DevOps Engineer",
+    "company": "CloudScale Technologies",
+    "location": "Bengaluru, Karnataka",
+    "type": "Full-time",
+    "experience": "1-3 years",
+    "description": "Looking for a DevOps Engineer to automate CI/CD build pipelines and infrastructure deployment. Skills required: Linux, Git, Docker, Kubernetes, Python scripting, AWS cloud services, Bash shell, and automated deployment pipelines."
+  },
+  {
+    "id": 12,
+    "title": "Data Scientist",
+    "company": "Quantum Predictive Analytics",
+    "location": "Mumbai, Maharashtra",
+    "type": "Full-time",
+    "experience": "1-3 years",
+    "description": "Seeking a Data Scientist to build predictive analytics, classification algorithms, and feature engineering workflows. Key technologies: Python, SQL, Scikit-Learn, Pandas, NumPy, Machine Learning, Statistical Analysis, and Flask model API deployment."
+  },
+  {
+    "id": 13,
+    "title": "QA Engineer",
+    "company": "QualityFirst Tech",
+    "location": "Chennai, Tamil Nadu",
+    "type": "Full-time",
+    "experience": "0-2 years",
+    "description": "We are hiring a QA Automation Engineer. Responsibilities include manual testing, automated test scripts using Python, Selenium, API testing with Postman, SQL test validation, Git, and bug tracking."
+  },
+  {
+    "id": 14,
+    "title": "React Developer",
+    "company": "Interface Interactive",
+    "location": "Bengaluru, Karnataka",
+    "type": "Full-time",
+    "experience": "1-3 years",
+    "description": "Looking for a specialized React Developer to build interactive single page applications. Core skills: JavaScript (ES6+), React.js, HTML5, CSS3, Redux or Context API, REST API integration, Git, and UI components library integration."
+  },
+  {
+    "id": 15,
+    "title": "Flask Developer",
+    "company": "MicroService Labs",
+    "location": "Pune, Maharashtra",
+    "type": "Full-time",
+    "experience": "0-2 years",
+    "description": "Seeking a Flask Backend Developer to construct lightweight Python microservices and REST APIs. Technical stack: Python, Flask, SQLAlchemy, MySQL, SQL queries, JWT authentication, Git, and Docker containerization."
+  },
+  {
+    "id": 16,
+    "title": "Junior Software Developer",
+    "company": "Zeta Byte Enterprise",
+    "location": "Chennai, Tamil Nadu",
+    "type": "Full-time",
+    "experience": "0-1 year",
+    "description": "Great entry-level opportunity for a Junior Software Developer. Basic proficiency required in Python, SQL, HTML, CSS, JavaScript, database concepts, version control (Git), and software testing fundamentals."
+  },
+  {
+    "id": 17,
+    "title": "Business Analyst",
+    "company": "StratCorp Consulting",
+    "location": "Gurugram, Haryana",
+    "type": "Full-time",
+    "experience": "1-3 years",
+    "description": "Hiring a Business Analyst to bridge technical development teams with business strategy. Required skills: SQL, Data Analysis, Python, Excel modeling, Requirement Gathering, Agile/Scrum methodologies, and technical documentation."
+  },
+  {
+    "id": 18,
+    "title": "Database Developer",
+    "company": "DataCore Systems",
+    "location": "Hyderabad, Telangana",
+    "type": "Full-time",
+    "experience": "1-3 years",
+    "description": "Looking for a Database Developer to engineer database architecture and ETL pipelines. Stack: MySQL, PostgreSQL, SQL programming, data modeling, performance tuning, Python scripting, and backup automation."
+  },
+  {
+    "id": 19,
+    "title": "AI/ML Intern",
+    "company": "FutureAI Research",
+    "location": "Bengaluru, Karnataka",
+    "type": "Internship",
+    "experience": "0-1 year",
+    "description": "Internship position for students/recent graduates interested in Artificial Intelligence. Academic background in Computer Science or Data Science with knowledge of Python, NumPy, Pandas, Scikit-learn, Machine Learning basics, and Git."
+  },
+  {
+    "id": 20,
+    "title": "Software Developer Intern",
+    "company": "TechNova Solutions",
+    "location": "Chennai, Tamil Nadu",
+    "type": "Internship",
+    "experience": "0-1 year",
+    "description": "Internship role in web development and software engineering. Practical exposure to Python, Flask, SQL, MySQL, HTML, CSS, JavaScript, Git, and software development methodologies."
+  }
+]
